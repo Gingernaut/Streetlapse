@@ -1,0 +1,54 @@
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+.filler {
+    height: 1px;
+    width: auto;
+}
+
+#wrapper {
+    height: 100%;
+    width: 100%;
+}
+
+.fullpage {
+    height: auto;
+    min-height: 100%;
+    width: auto;
+    position: inherit;
+}
+
+#landingpage {
+    position: relative;
+    background-image: url("");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#NavigationalMap {
+    border: 1px solid black;
+    height: 500px;
+    width: 700px;
+
+}
+
+
+#controlpanel {
+margin-top: 10px;
+}
+
+.directionbox {
+    margin-right:8px;
+    height:24px;
+}
+
+#search_start {
+margin-left: 10px;
+}
+
+@media screen and (max-width: 1000px) {}
