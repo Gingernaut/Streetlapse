@@ -30,11 +30,17 @@ body {
     background-size: cover;
 }
 
+#mapwrapper {
+    transition: 1.75s margin ease;
+    display:inline-block;
+}
+
 #NavigationalMap {
     border: 1px solid black;
     height: 500px;
     width: 700px;
     max-width:100%;
+    float:left;
 }
 
 #controlpanel {
@@ -46,6 +52,10 @@ body {
     margin-right:8px;
     height:24px;
     opacity:.95;
+    color : #696869;
+    background : #ffffff;
+    border-radius:2px;
+    border: 1px solid white;
 
 }
 
@@ -53,26 +63,23 @@ body {
     margin-left: 10px;
 }
 
-#submit {
-    border: solid 1px #d3d3d3;
+#Generate {
+    border: solid 1px #c4c4c4;
     border-radius : 2px;
-    font-size : 10px;
-    color : #696869;
-    padding : 1px 15px;
-    background : #ffffff;
-    height:28px;
     cursor: pointer; 
     cursor: hand;
+    height:30px;
 }
-
 
 #mode-selector {
     display:inline-block;
-    color:white;
     background-color:#4D90FE;
     border-radius : 2px;
-    padding:8px;
-    opacity:.95;
+    color:white;
+    padding:10px;
+    padding-bottom:0;
+    height:20px;
+    border:0;
 }
 
 input[type="radio"] {
@@ -81,3 +88,11 @@ input[type="radio"] {
 }
 
 @media screen and (max-width: 1000px) {}
+
+.hidden {
+    margin-left: -710px;
+}
+
+#hide {
+    margin-left: 10px;
+}

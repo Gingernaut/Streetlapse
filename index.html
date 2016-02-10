@@ -21,28 +21,27 @@
         <!--Button to move the map to the side with a tag to click, transition on screen and off screen. Also from on screen,-->
         <div id="wrapper">
             <div class="fullpage" id="landingpage">
-                <div id="controlpanel">
-
-                    <input class="directionbox" id="search_start" placeholder="Starting Place">
-                    <input class="directionbox" id="search_end" placeholder="Destination">
-
-                    <div id="mode-selector">
-
-                        <input class="radio" type="radio" name="type" id="changemode-driving" checked="checked">
-                        <label for="changemode-driving">Driving</label>
-
-                        <input class="radio" type="radio" name="type" id="changemode-walking">
-                        <label for="changemode-walking">Walking</label>
-
+                <div id="mapwrapper">
+                    <button id="hide">Hide/Show</button>
+                    <div id="controlpanel">
+                        <input class="directionbox" id="search_start" placeholder="Starting Place">
+                        <input class="directionbox" id="search_end" placeholder="Destination">
+                        <div class="directionbox" id="mode-selector">
+                            <input class="radio" type="radio" name="type" id="changemode-driving" checked="checked">
+                            <label for="changemode-driving">Driving</label>
+                            <input class="radio" type="radio" name="type" id="changemode-walking">
+                            <label for="changemode-walking">Walking</label>
+                        </div>
+                        <input class ="directionbox" role="button" id="Generate" type="submit" value="Generate"/>
                     </div>
-                    <!-- <input class ="directionbox" role="button" id="submit" type="submit" />-->
+                    <div id="NavigationalMap"></div>
                 </div>
-                <div id="NavigationalMap"></div>
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
         <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyD3cOoekvzKSqpMiRI7WJc1Vxo__vF3txA&libraries=places"></script>
-        <script src="Scripts/app.js"></script>
+        <script src="Scripts/set_map.js"></script>
+        <script src="Scripts/streetlapse.js"></script>
     </body>
 </html>
 <!--
