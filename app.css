@@ -34,20 +34,50 @@ body {
     border: 1px solid black;
     height: 500px;
     width: 700px;
-
+    max-width:100%;
 }
 
 #controlpanel {
     margin-top: 10px;
+    position:absolute;
 }
 
 .directionbox {
     margin-right:8px;
     height:24px;
+    opacity:.95;
+
 }
 
 #search_start {
     margin-left: 10px;
+}
+
+#submit {
+    border: solid 1px #d3d3d3;
+    border-radius : 2px;
+    font-size : 10px;
+    color : #696869;
+    padding : 1px 15px;
+    background : #ffffff;
+    height:28px;
+    cursor: pointer; 
+    cursor: hand;
+}
+
+
+#mode-selector {
+    display:inline-block;
+    color:white;
+    background-color:#4D90FE;
+    border-radius : 2px;
+    padding:8px;
+    opacity:.95;
+}
+
+input[type="radio"] {
+  margin-top: -1px;
+  vertical-align: middle;
 }
 
 @media screen and (max-width: 1000px) {}
