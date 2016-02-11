@@ -25,11 +25,12 @@ function initMap() {
     var search_controls = document.getElementById('controlpanel');
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(search_controls);
 
+
     var origin_autocomplete = new google.maps.places.Autocomplete(origin_input);
     origin_autocomplete.bindTo('bounds', map);
-
     var destination_autocomplete = new google.maps.places.Autocomplete(destination_input);
     destination_autocomplete.bindTo('bounds', map);
+
 
     function setupClickListener(id, mode) {
         var radioButton = document.getElementById(id);
@@ -59,6 +60,7 @@ function initMap() {
             );
             return;
         }
+
         expandViewportToFitPlace(map, place);
         origin_place_id = place.place_id;
         route(origin_place_id, destination_place_id, travel_mode,directionsService, directionsDisplay);
@@ -72,6 +74,7 @@ function initMap() {
             );
             return;
         }
+
         expandViewportToFitPlace(map, place);
         destination_place_id = place.place_id;
         route(origin_place_id, destination_place_id, travel_mode,directionsService, directionsDisplay);
@@ -104,10 +107,10 @@ function initMap() {
 
 google.maps.event.addDomListener(window, 'load', initMap);
 
-
  $('#hide').click(function(){      // bind a click event to the div element...
     $("#mapwrapper").toggleClass('hidden');  // that toggles the 'hilite' class
   });
+
 
 // function initialize() {
 
