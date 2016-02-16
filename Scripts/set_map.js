@@ -13,7 +13,7 @@ function initMap() {
 
     var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer({
-        draggable: false, //set to true when I can grab the pin's location and update the search bar
+        draggable: true, //set to true when I can grab the pin's location and update the search bar
     });
 
     directionsDisplay.setMap(map);
