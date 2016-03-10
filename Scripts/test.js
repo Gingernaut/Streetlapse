@@ -1,7 +1,3 @@
-$('#Generate').click(function() {
-    alert('hello');
-    initialize();
-})
 var rendererOptions = {
   draggable: true
 };
@@ -12,9 +8,12 @@ var map;
 
 function initialize() {
 
+
+	
+
 	hyper = {
-			'start' : "39.98320375131727, -75.15682697296143",
-			'end'   : "39.98017843488709, -75.15751361846924"
+			'start' : origin_place_id,
+			'end'   : destination_place_id
 			};	
 
 			hyperlapse = new Hyperlapse(document.getElementById('pano'), { 
@@ -46,6 +45,10 @@ function initialize() {
 				calcRoute();
 			});
 
+  var mapOptions = {
+	zoom: 15,
+	center: new google.maps.LatLng(39.98320375131727, -75.15682697296143)
+  };
 
   map = new google.maps.Map(document.getElementById('map'), mapOptions);
   directionsDisplay.setMap(map);
