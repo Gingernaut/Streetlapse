@@ -54,6 +54,10 @@ function initMap() {
 
     origin_autocomplete.addListener('place_changed', function() {
         var place = origin_autocomplete.getPlace();
+
+        var latitute = place.geometry.location.lat();
+        var longitude = place.geometry.location.long();
+
         if (!place.geometry) {
             window.alert(
                 "Autocomplete's returned place contains no geometry"
@@ -68,6 +72,12 @@ function initMap() {
 
     destination_autocomplete.addListener('place_changed', function() {
         var place = destination_autocomplete.getPlace();
+
+        var latitute = place.geometry.location.lat();
+        var longitude = place.geometry.location.long();
+
+        
+        console.log(place);
         if (!place.geometry) {
             window.alert(
                 "Autocomplete's returned place contains no geometry"

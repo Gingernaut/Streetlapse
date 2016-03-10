@@ -10,6 +10,7 @@ var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);;
 var directionsService = new google.maps.DirectionsService();
 var map;
 
+
 function initialize() {
 
 	hyper = {
@@ -74,7 +75,6 @@ function initialize() {
 		calcRoute();
     });
 
-	
   });
 }
 
