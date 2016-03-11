@@ -76,7 +76,7 @@ function initMap() {
         var latitute = place.geometry.location.lat();
         var longitude = place.geometry.location.long();
 
-        
+
         console.log(place);
         if (!place.geometry) {
             window.alert(
@@ -117,80 +117,6 @@ function initMap() {
 
 google.maps.event.addDomListener(window, 'load', initMap);
 
- $('#hide').click(function(){      // bind a click event to the div element...
-    $("#mapwrapper").toggleClass('hidden');  // that toggles the 'hilite' class
+ $('#hide').click(function(){     
+    $("#mapwrapper").toggleClass('hidden');
   });
-
-
-// function initialize() {
-
-//     /*********    Defining the origin of the map on page load    *************/
-//     var mapstart = {
-//         center: new google.maps.LatLng(41.1613357, -97.8811623),
-//         zoom: 4,
-//         mapTypeId: google.maps.MapTypeId.ROADMAP,
-//         disableDefaultUI: true
-//     };
-
-//     var directionsService = new google.maps.DirectionsService;
-//     var directionsDisplay = new google.maps.DirectionsRenderer;
-// 	var travel_mode = google.maps.TravelMode.DRIVING;
-
-//     var map = new google.maps.Map(document.getElementById("NavigationalMap"),mapstart);
-
-//     directionsDisplay.setMap(mapstart);
-
-//     /*****************    Putting the controls on the map    *********/
-//     var search_controls = document.getElementById('controlpanel');
-//     map.controls[google.maps.ControlPosition.TOP_LEFT].push(search_controls);
-
-//     /*************************   autocomplete           *****************/
-//     var startbox = document.getElementById('search_start');
-//     var endbox = document.getElementById('search_end');
-
-//     var origin_autocomplete = new google.maps.places.Autocomplete(startbox);
-//     //origin_autocomplete.bindTo('bounds', map);
-
-//     var destination_autocomplete = new google.maps.places.Autocomplete(endbox);
-//     //destination_autocomplete.bindTo('bounds', map);
-
-//     /************   Detecting when the input fields change      *********/
-//     var start;
-//     var destination;
-
-// 	var onChangeHandler = function() {
-
-
-// 	};
-
-// 	function setupClickListener(id, mode) {
-// 		var radioButton = document.getElementById(id);
-// 		radioButton.addEventListener('click', function() {
-// 			travel_mode = mode;
-// 		});
-// 	}
-
-// 	document.getElementById('search_start').addEventListener('change', onChangeHandler);
-// 	document.getElementById('search_end').addEventListener('change', onChangeHandler);
-
-// 	setupClickListener('changemode-walking', google.maps.TravelMode.WALKING);
-// 	setupClickListener('changemode-driving', google.maps.TravelMode.DRIVING);
-
-
-
-// };
-
-// function CalcRoute(directionsService, directionsDisplay) {
-
-// }
-
-// google.maps.event.addDomListener(window, 'load', initialize);
-
-
-
-
-
-
-
-
-

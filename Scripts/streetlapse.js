@@ -10,12 +10,11 @@ var directionsDisplay = new google.maps.DirectionsRenderer(rendererOptions);;
 var directionsService = new google.maps.DirectionsService();
 var map;
 
-
-function initialize() {
+function hyperstuff(startlat,startlong,endlat,endlong) {
 
 	hyper = {
-			'start' : "39.98320375131727, -75.15682697296143",
-			'end'   : "39.98017843488709, -75.15751361846924"
+			'start' : startlat, startlong,
+			'end'   : endlat, endlong
 			};	
 
 			hyperlapse = new Hyperlapse(document.getElementById('pano'), { 
@@ -69,7 +68,7 @@ function initialize() {
         var bounds = new google.maps.LatLngBounds();
 
 		var legs = directionsDisplay.getDirections().routes[0].legs[0];
-		hyper.start = new google.maps.LatLng(places[0].geometry.location.H, places[0].geometry.location.L);//legs.start_location.H, legs.start_location.L);
+		hyper.start = new google.maps.LatLng(places[0].geometry.location.H, places[0].geometry.location.L);
 		console.log(places[0].geometry.location)
 		hyper.end = new google.maps.LatLng(legs.end_location.H, legs.end_location.L);
 		calcRoute();
@@ -84,6 +83,7 @@ function calcRoute() {
 		destination: hyper.end, 
 		travelMode: google.maps.DirectionsTravelMode.DRIVING
 	};
+	
 	directionsService.route(request, function(response, status) {
 		if (status == google.maps.DirectionsStatus.OK) { 
 			directionsDisplay.setDirections(response);
@@ -94,4 +94,4 @@ function calcRoute() {
 	})	
 
 }
-google.maps.event.addDomListener(window, 'load', initialize);
+google.maps.event.addDomListener(window, 'load', hyperstuff);
