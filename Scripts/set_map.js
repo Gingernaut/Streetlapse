@@ -36,7 +36,7 @@ function initMap() {
         var radioButton = document.getElementById(id);
         radioButton.addEventListener('click', function() {
             travel_mode = mode;
-            route(origin_place_id, destination_place_id,travel_mode, directionsService,directionsDisplay);
+            route(origin_place_id, destination_place_id, travel_mode,directionsService, directionsDisplay, destlat, destlong, originlat, originlong);
         });
     }
 
@@ -55,8 +55,8 @@ function initMap() {
     origin_autocomplete.addListener('place_changed', function() {
         var place = origin_autocomplete.getPlace();
 
-        var latitute = place.geometry.location.lat();
-        var longitude = place.geometry.location.long();
+        // var latitute = place.geometry.location.lat();
+        // var longitude = place.geometry.location.long();
 
         if (!place.geometry) {
             window.alert(
@@ -65,19 +65,23 @@ function initMap() {
             return;
         }
 
+        console.log(place);
+
         expandViewportToFitPlace(map, place);
         origin_place_id = place.place_id;
-        route(origin_place_id, destination_place_id, travel_mode,directionsService, directionsDisplay);
+
+        originlat = place.geometry.location.lat();
+        originlong = place.geometry.location.lng();
+
+        route(origin_place_id, destination_place_id, travel_mode,directionsService, directionsDisplay, destlat, destlong, originlat, originlong);
     });
 
     destination_autocomplete.addListener('place_changed', function() {
         var place = destination_autocomplete.getPlace();
 
-        var latitute = place.geometry.location.lat();
-        var longitude = place.geometry.location.long();
+        // var latitute = place.geometry.location.lat();
+        // var longitude = place.geometry.location.long();
 
-
-        console.log(place);
         if (!place.geometry) {
             window.alert(
                 "Autocomplete's returned place contains no geometry"
@@ -87,13 +91,24 @@ function initMap() {
 
         expandViewportToFitPlace(map, place);
         destination_place_id = place.place_id;
-        route(origin_place_id, destination_place_id, travel_mode,directionsService, directionsDisplay);
+
+        destlat = place.geometry.location.lat();
+        destlong = place.geometry.location.lng();
+
+        route(origin_place_id, destination_place_id, travel_mode,directionsService, directionsDisplay, destlat, destlong, originlat, originlong);
     });
 
-    function route(origin_place_id, destination_place_id, travel_mode,directionsService, directionsDisplay) {
-        if (!origin_place_id || !destination_place_id) {
+    function route(origin_place_id, destination_place_id, travel_mode,directionsService, directionsDisplay, destlat, destlong, originlat, originlong) {
+        if (!origin_place_id || !destination_place_id || !destlat || !destlong || !originlat || !originlong) {
             return;
         }
+        
+        console.log("Origin Lat: " + originlat);
+        console.log("Origin Long: " + originlong);
+
+        console.log("Destination Lat: " + destlat);
+        console.log("Destination Long: " + destlong);
+
 
         directionsService.route({
             origin: {
@@ -109,6 +124,7 @@ function initMap() {
         function(response, status) {
             if (status === google.maps.DirectionsStatus.OK) {
                 directionsDisplay.setDirections(response);
+                streetlapse(originlat,originlong,destlat,destlong);
             } else {
                 window.alert('Directions request failed due to ' + status);}
         });
