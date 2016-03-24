@@ -20,9 +20,9 @@
         <!--Look to use Angular Material for the Design-->
         <!--Button to move the map to the side with a tag to click, transition on screen and off screen. Also from on screen,-->
         <div id="wrapper">
+        <div id="scrim"></div>
             <div class="fullpage" id="landingpage">
                 <div id="mapwrapper">
-                    <button id="hide">Hide/Show</button>
                     <div id="controlpanel">
                         <input class="directionbox" id="search_start" placeholder="Starting Place">
                         <input class="directionbox" id="search_end" placeholder="Destination">
@@ -32,18 +32,36 @@
                             <input class="radio" type="radio" name="type" id="changemode-walking">
                             <label for="changemode-walking">Walking</label>
                         </div>
-                        <input class ="directionbox" role="button" id="Generate" type="submit" value="Generate"/>
+                        <input class ="directionbox stylebutton" role="button" id="Generate" type="submit" value="Generate"/>
                     </div>
                     <div id="NavigationalMap"></div>
                 </div>
-                <div id="pano"></div>
-                <div id="buttons">
-                    <button id="load">Load</button>
-                    <button id="play">Start</button>
-                    <button id="stop">Stop</button>
-                    <button id="next">Next</button>
-                    <button id="prev">Prev</button>
+                
+                <div id='panopresentation'>
+                <div id="panoelements">
+                    <a href="" class="close-button"></a>
+                    <div id="pano">
+                        <div class="cs-loader">
+  <div class="cs-loader-inner">
+    <label> ●</label>
+    <label> ●</label>
+    <label> ●</label>
+    <label> ●</label>
+    <label> ●</label>
+    <label> ●</label>
+  </div>
+</div>
+                        
+                    </div>
+                    <div id="buttons">
+                        <button class='stylebutton' id="play">Start</button>
+                        <button class='stylebutton' id="stop">Stop</button>
+                        <button class='stylebutton' id="next">Next</button>
+                        <button class='stylebutton' id="prev">Prev</button>
+                    </div>
+                    </div>
                 </div>
+                
             </div>
         </div>
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
@@ -53,6 +71,7 @@
         <script src="Scripts/GSVPano.js"></script>
         <script src="Scripts/Hyperlapse.js"></script>
         <script src="Scripts/streetlapse.js"></script>
+        <script src="Scripts/app.js"></script>
     </body>
 </html>
 <!--

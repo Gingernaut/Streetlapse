@@ -1,8 +1,7 @@
-html,
-body {
+html,body {
     width: 100%;
     height: 100%;
-    overflow-x: hidden;
+    overflow: hidden;
 }
 
 .filler {
@@ -24,82 +23,233 @@ body {
 
 #landingpage {
     position: relative;
-    background-image: url("");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: #4D90FE;
 }
 
 #mapwrapper {
     transition: 1.75s margin ease;
-    display:inline-block;
+    display: inline-block;
 }
 
 #NavigationalMap {
-    border: 1px solid black;
-    height: 500px;
-    width: 700px;
-    max-width:100%;
-    float:left;
+    height: 96vh;
+    width: 100vw;
 }
 
 #controlpanel {
     margin-top: 10px;
-    position:absolute;
+    position: absolute;
 }
 
 .directionbox {
-    margin-right:8px;
-    height:24px;
-    opacity:.95;
-    color : #696869;
-    background : #ffffff;
-    border-radius:2px;
-    border: 1px solid white;
-
+    margin-right: 8px;
+    height: 24px;
+    opacity: .95;
+    color: #696869;
+    background: #fff;
+    border-radius: 2px;
+    border: 1px solid #fff;
 }
 
 #search_start {
     margin-left: 10px;
 }
 
-#Generate {
-    border: solid 1px #c4c4c4;
-    border-radius : 2px;
-    cursor: pointer; 
+.stylebutton {
+    border-radius: 2px;
+    cursor: pointer;
     cursor: hand;
-    height:30px;
+    height: 30px;
+    border: 1px solid #c4c4c4;
+}
+
+.goodtogo {
+    color: #4D90FE;
+    font-weight: 700;
 }
 
 #mode-selector {
-    display:inline-block;
-    background-color:#4D90FE;
-    border-radius : 2px;
-    color:white;
-    padding:10px;
-    padding-bottom:0;
-    height:20px;
-    border:0;
+    display: inline-block;
+    background-color: #4D90FE;
+    border-radius: 2px;
+    color: #fff;
+    padding: 10px;
+    padding-bottom: 0;
+    height: 20px;
+    border: 0;
 }
 
 input[type="radio"] {
-  margin-top: -1px;
-  vertical-align: middle;
+    margin-top: -1px;
+    vertical-align: middle;
 }
 
+#scrim {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    z-index: 100;
+    background-color: rgba(40,40,40,.8);
+    transition: 1s all ease;
+    display: none;
+}
+
+#panopresentation {
+    z-index: 1000;
+    position: absolute;
+    top: 50%;
+    height: 400px;
+    transform: translateY(-50%);
+    width: 100%;
+    text-align: center;
+    display: none;
+    transition: 2s display ease;
+}
+
+.close-button {
+    height: 15px;
+    width: 15px;
+    position: relative;
+    float: right;
+    padding: 25px;
+    padding-top: 0;
+    margin-right: -35px;
+}
+
+.close-button:before,.close-button:after {
+    transform: rotate(-45deg);
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-top: -5px;
+    margin-left: -25px;
+    display: block;
+    height: 10px;
+    width: 50px;
+    background-color: #fff;
+    transition: all .2s ease-out;
+}
+
+.close-button:after {
+    transform: rotate(45deg);
+}
+
+.close-button:hover:before,.close-button:hover:after {
+    transform: rotate(0deg);
+}
+
+#panoelements {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    display: inline-block;
+}
 
 #pano {
-    height:500px;
-    width:500px;
-    border: 1px solid red;
+    width: 925px;
 }
 
-@media screen and (max-width: 1000px) {}
-
-.hidden {
-    margin-left: -710px;
+.cs-loader {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
 }
 
-#hide {
-    margin-left: 10px;
+.cs-loader-inner {
+    transform: translateY(-50%);
+    top: 50%;
+    position: absolute;
+    width: calc(100% - 200px);
+    color: #FFF;
+    padding: 0 100px;
+    text-align: center;
+}
+
+.cs-loader-inner label {
+    font-size: 20px;
+    opacity: 0;
+    display: inline-block;
+}
+
+@keyframes lol {
+    0% {
+        opacity: 0;
+        transform: translateX(-300px);
+    }
+
+    33% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    66% {
+        opacity: 1;
+        transform: translateX(0px);
+    }
+
+    100% {
+        opacity: 0;
+        transform: translateX(300px);
+    }
+}
+
+@-webkit-keyframes lol {
+    0% {
+        opacity: 0;
+        -webkit-transform: translateX(-300px);
+    }
+
+    33% {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+    }
+
+    66% {
+        opacity: 1;
+        -webkit-transform: translateX(0px);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateX(300px);
+    }
+}
+
+.cs-loader-inner label:nth-child(6) {
+    -webkit-animation: lol 3s infinite ease-in-out;
+    animation: lol 3s infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(5) {
+    -webkit-animation: lol 3s 100ms infinite ease-in-out;
+    animation: lol 3s 100ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(4) {
+    -webkit-animation: lol 3s 200ms infinite ease-in-out;
+    animation: lol 3s 200ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(3) {
+    -webkit-animation: lol 3s 300ms infinite ease-in-out;
+    animation: lol 3s 300ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(2) {
+    -webkit-animation: lol 3s 400ms infinite ease-in-out;
+    animation: lol 3s 400ms infinite ease-in-out;
+}
+
+.cs-loader-inner label:nth-child(1) {
+    -webkit-animation: lol 3s 500ms infinite ease-in-out;
+    animation: lol 3s 500ms infinite ease-in-out;
+}
+
+@media screen and (max-width: 1000px) {
+    
 }

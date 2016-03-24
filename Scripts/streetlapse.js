@@ -1,7 +1,4 @@
-
-var directionsService = new google.maps.DirectionsService();
-
-function streetlapse(startlat, startlong, endlat, endlong) {
+function streetlapse(startlat, startlong, endlat, endlong, travel_mode) {
 
     hyper = {
         startlat,
@@ -28,6 +25,7 @@ function streetlapse(startlat, startlong, endlat, endlong) {
 
     hyperlapse.onLoadComplete = function(e) {
         hyperlapse.next();
+        $(".cs-loader").css("display","none");
     };
 
     $("#play").click(function(e) {
@@ -42,33 +40,28 @@ function streetlapse(startlat, startlong, endlat, endlong) {
         hyperlapse.next();
     });
 
-    $("#load").click(function() {
-        calcRoute();
+    $("#Generate").click(function() {
+        calcRoute(travel_mode);
     });
 
 }
 
-function calcRoute() {
-    console.log('calc route started');
+function calcRoute(travel_mode) {
 
     request = {
         origin: new google.maps.LatLng(hyper.startlat, hyper.startlong),
         destination: new google.maps.LatLng(hyper.endlat, hyper.endlong),
-        travelMode: google.maps.DirectionsTravelMode.DRIVING
+        travelMode: travel_mode
     };
-    console.log(hyper)
 
     directionsService.route(request, function(response, status) {
-        console.log('direction service entered');
+
         if (status == google.maps.DirectionsStatus.OK) {
-            // directionsDisplay.setDirections(response);
-            console.log('status is good!!')
             hyperlapse.generate({
                 route: response
             });
         } else {
             console.log(status);
-            console.log("Agh!!!");
         }
     })
 }
