@@ -176,6 +176,25 @@ input[type="radio"] {
     display: inline-block;
 }
 
+#promostuff {
+    margin-top: 1vh;
+}
+
+#promostuff a {
+    text-decoration: none;
+    color: #fff;
+}
+
+a:visited {
+    color: #fff;
+    text-decoration: none;
+}
+
+#source {
+    float: right;
+    margin-right: 15px;
+}
+
 @keyframes lol {
     0% {
         opacity: 0;
