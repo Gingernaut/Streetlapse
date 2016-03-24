@@ -40,6 +40,11 @@ function streetlapse(startlat, startlong, endlat, endlong, travel_mode) {
         hyperlapse.next();
     });
 
+    $("#prev").click(function(e) {
+        hyperlapse.prev();
+    });
+
+
     $("#Generate").click(function() {
         calcRoute(travel_mode);
     });
