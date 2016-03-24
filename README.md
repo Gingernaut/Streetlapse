@@ -4,5 +4,5 @@
 
 ![alt tag](https://github.com/Gingernaut/Streetlapse/blob/master/Media/preview.png)
 
-Used the Google Maps API, Hyperlapse.js, GSVPano.js, and Three.js.
+Built using the Google Maps API, Hyperlapse.js, GSVPano.js, and Three.js.
 
