@@ -97,7 +97,6 @@ html,body {
 #NavigationalMap {
     height: calc(100vh - 45px);
     width: 100vw;
-    background-color:yellow;
 }
 
 #controlpanel {
