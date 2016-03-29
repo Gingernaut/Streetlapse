@@ -29,15 +29,14 @@ html,body {
 }
 
 #navbar {
-    height:4.5vh;
-    min-height:45px;
+    height:45px;
     display:inline-block;
     width:100%;
 }
 
 #navbar h1 {
     float:left;
-    margin-top:1.1vh;
+    margin-top:14px;
     margin-left:1.5vw;
     font-size: 22px;
 }
@@ -57,7 +56,7 @@ html,body {
   height: 30px;
   display: inline-block;
   border-radius: 3px;
-margin-left:50px;
+    margin-left:50px;
 }
 
 
@@ -96,8 +95,9 @@ margin-left:50px;
 }
 
 #NavigationalMap {
-    height: 95.5vh;
+    height: calc(100vh - 45px);
     width: 100vw;
+    background-color:yellow;
 }
 
 #controlpanel {
