@@ -81,6 +81,9 @@ html,body {
   font-size: 1em;
 }
 
+.searchbox {
+    width:250px;
+}
 
 .svg-wrapper:hover #shape {
   stroke-dasharray: 50 0;
