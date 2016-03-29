@@ -164,7 +164,7 @@ input[type="radio"] {
     z-index: 1000;
     position: absolute;
     top: 50%;
-    height: 400px;
+    height: 350px;
     transform: translateY(-50%);
     width: 100%;
     text-align: center;

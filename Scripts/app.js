@@ -7,13 +7,13 @@ $('.close-button').click(function(e) {
 });
 
 $('#Generate').click(function() {
-    $('#scrim').css("display", "block");
-    $('#mapmodal').css("display", "block");
+    $('#scrim').css("display", "inline-block");
+    $('#mapmodal').css("display", "inline-block");
 });
 
 
 $('.svg-wrapper').click(function(e) {
 	e.preventDefault();
-    $('#scrim').css("display", "block");
-    $('#aboutme').css("display","block");
+    $('#scrim').css("display", "inline-block");
+    $('#aboutme').css("display","inline-block");
 });
